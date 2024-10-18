@@ -85,7 +85,7 @@ class SymbolIndex(
     private val databaseService: DatabaseService
 ) {
     private val db: Database by lazy {
-        databaseService.db ?: Database.connect("jdbc:h2:mem:symbolindex;DB_CLOSE_DELAY=-1", "org.h2.Driver")
+        databaseService.db ?: Database.connect("jdbc:h2:file:~/genesis-local-db/symbolindex;DB_CLOSE_DELAY=-1", "org.h2.Driver")
     }
 
     var progressFactory: Progress.Factory = Progress.Factory.None

@@ -51,7 +51,7 @@ import org.jetbrains.kotlin.utils.addToStdlib.applyIf
 import java.util.concurrent.TimeUnit
 
 // The maximum number of completion items
-private const val MAX_COMPLETION_ITEMS = 75
+private const val MAX_COMPLETION_ITEMS = 15
 
 // The minimum length after which completion lists are sorted
 private const val MIN_SORT_LENGTH = 3

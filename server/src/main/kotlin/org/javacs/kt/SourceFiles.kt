@@ -183,7 +183,7 @@ class SourceFiles(
         val sourceMatcher = FileSystems.getDefault().getPathMatcher("glob:*.{kt,kts}")
         return SourceExclusions(listOf(root), scriptsConfig)
             .walkIncluded()
-            .filter { sourceMatcher.matches(it.fileName) }
+            .filter { path: Path -> sourceMatcher.matches(path.fileName) && !path.fileName.toString().contains(".gradle") }
             .map(Path::toUri)
             .toSet()
     }
