@@ -25,5 +25,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Build
         run: ./gradlew :server:installDist -PjavaVersion=${{ matrix.java }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.os }}-java-${{ matrix.java }}
+          path: server/build/install/server
       - name: Detekt
         run: ./gradlew detekt -PjavaVersion=${{ matrix.java }}
