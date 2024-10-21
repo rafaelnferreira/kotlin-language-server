@@ -344,7 +344,7 @@ class KotlinTextDocumentService(
     }
 
     override fun close() {
-        shutdownExecutors(awaitTermination = true)
+        shutdownExecutors(awaitTermination = false)
     }
 }
 

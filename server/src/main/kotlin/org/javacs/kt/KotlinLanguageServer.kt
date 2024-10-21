@@ -160,10 +160,11 @@ class KotlinLanguageServer(
     }
 
     override fun close() {
+        LOG.info("Closing connection")
         textDocumentService.close()
         classPath.close()
         tempDirectory.close()
-        async.shutdown(awaitTermination = true)
+        async.shutdown(awaitTermination = false)
     }
 
     override fun shutdown(): CompletableFuture<Any> {
